@@ -1,205 +1,421 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Slime Cellar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slime Cellar</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      color:#24142c;
-background-image: url("background.png");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:30px;
-    }
+body{
+  background:#fff7fb;
+  color:#271331;
+}
 
-    .box{
-      background:rgba(255,255,255,.75);
-      padding:45px;
-      border-radius:35px;
-      max-width:850px;
-      box-shadow:0 15px 40px rgba(0,0,0,.15);
-    }
+header{
+  background:linear-gradient(135deg,#ffe1f5,#f3e7ff,#e7fbff);
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
 
-    .logo{
-      width:150px;
-      height:150px;
-      object-fit:cover;
-      border-radius:50%;
-      background:white;
-      padding:10px;
-    }
+.hero{
+  max-width:900px;
+}
 
-    h1{
-      font-size:60px;
-      color:#8d39ff;
-      margin:20px 0 10px;
-    }
+.logo{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  background:white;
+  padding:8px;
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
 
-    p{
-      font-size:20px;
-      line-height:1.5;
-    }
+h1{
+  font-size:64px;
+  color:#8737ff;
+  margin-top:22px;
+}
 
-    .btn{
-      display:inline-block;
-      background:#8d39ff;
-      color:white;
-      padding:14px 26px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:bold;
-      margin:8px;
-    }
+.hero p{
+  font-size:21px;
+  color:#5a4268;
+  margin:18px auto 0;
+  max-width:720px;
+  line-height:1.6;
+}
 
-    .btn.white{
-      background:white;
-      color:#8d39ff;
-    }
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:15px 28px;
+  border-radius:999px;
+  background:#8737ff;
+  color:white;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 8px 22px rgba(135,55,255,.25);
+}
 
-    section{
-      max-width:1100px;
-      margin:auto;
-      padding:60px 20px;
-    }
+.btn.light{
+  background:white;
+  color:#8737ff;
+}
 
-    .feature{
-      background:linear-gradient(135deg,#8d39ff,#ff4fd8);
-      color:white;
-      text-align:center;
-      border-radius:35px;
-      padding:45px 25px;
-    }
+section{
+  max-width:1180px;
+  margin:auto;
+  padding:65px 20px;
+}
 
-    h2{
-      text-align:center;
-      color:#8d39ff;
-      font-size:38px;
-    }
+.title{
+  text-align:center;
+  font-size:40px;
+  color:#8737ff;
+  margin-bottom:12px;
+}
 
-    .feature h2{
-      color:white;
-    }
+.subtitle{
+  text-align:center;
+  color:#654d70;
+  font-size:18px;
+  line-height:1.6;
+  max-width:760px;
+  margin:0 auto 38px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
 
-    .card{
-      background:rgba(255,255,255,.9);
-      padding:22px;
-      border-radius:28px;
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,.12);
-    }
+.card{
+  background:white;
+  border-radius:28px;
+  padding:24px;
+  text-align:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.09);
+}
 
-    .card img{
-      width:100%;
-      height:300px;
-      object-fit:cover;
-      border-radius:22px;
-    }
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:22px;
+  margin-bottom:18px;
+}
 
-    .price{
-      font-size:28px;
-      font-weight:bold;
-      color:#8d39ff;
-      margin:15px 0;
-    }
+.badge{
+  display:inline-block;
+  background:#ffe45c;
+  color:#453700;
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:12px;
+}
 
-    footer{
-      text-align:center;
-      padding:35px;
-      background:rgba(255,255,255,.75);
-    }
-  </style>
+.card h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#5f4c67;
+  line-height:1.5;
+}
+
+.price{
+  color:#8737ff;
+  font-weight:900;
+  font-size:30px;
+  margin:16px 0;
+}
+
+.feature{
+  background:linear-gradient(135deg,#8737ff,#ff4dc4);
+  color:white;
+  border-radius:34px;
+  padding:48px 24px;
+  text-align:center;
+  box-shadow:0 12px 35px rgba(135,55,255,.22);
+}
+
+.feature h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.feature p{
+  font-size:19px;
+  line-height:1.6;
+}
+
+.gallery img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 8px 22px rgba(0,0,0,.1);
+}
+
+.locator-box{
+  background:white;
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 10px 28px rgba(0,0,0,.09);
+}
+
+.search-bar{
+  display:flex;
+  gap:12px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+}
+
+.search-bar input{
+  flex:1;
+  min-width:230px;
+  padding:16px 18px;
+  border-radius:999px;
+  border:2px solid #eadcff;
+  font-size:16px;
+  outline:none;
+}
+
+.search-bar button{
+  border:none;
+  cursor:pointer;
+}
+
+.store-list{
+  display:grid;
+  gap:18px;
+}
+
+.store{
+  border:2px solid #f0e5ff;
+  border-radius:22px;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.store h3{
+  color:#8737ff;
+  font-size:23px;
+  margin-bottom:6px;
+}
+
+.store p{
+  color:#5f4c67;
+  line-height:1.5;
+}
+
+.map-btn{
+  background:#21bd91;
+}
+
+footer{
+  text-align:center;
+  padding:38px 20px;
+  background:white;
+  color:#6a5572;
+}
+
+@media(max-width:700px){
+  h1{
+    font-size:46px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .title{
+    font-size:33px;
+  }
+
+  .store{
+    text-align:center;
+    justify-content:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<header>
   <div class="hero">
-    <div class="box">
-      <img class="logo" src="logo.png">
-      <h1>Slime Cellar</h1>
-      <p>Handmade scented slime with collectible mystery charms inside every container.</p>
+    <img class="logo" src="logo.png" alt="Slime Cellar Logo">
+
+    <h1>Slime Cellar</h1>
+
+    <p>
+      Handmade scented slime with collectible mystery charms inside every container.
+      Soft, stretchy, scented, and made to collect.
+    </p>
+
+    <div>
       <a class="btn" href="#shop">Shop Slime</a>
-      <a class="btn white" href="#locator">Find In Stores</a>
+      <a class="btn light" href="#locator">Find In Stores</a>
     </div>
   </div>
+</header>
 
-  <section class="feature">
-    <h2>Collect The Mystery Charms</h2>
-    <p>Every Slime Cellar container comes with 1 random mystery charm inside.</p>
-  </section>
+<section class="feature">
+  <h2>1 Mystery Charm In Every Container</h2>
+  <p>
+    Every slime comes with a surprise charm inside. Open it, collect it, and try to find them all.
+  </p>
+</section>
 
-  <section id="shop">
-    <h2>Shop Slime</h2>
+<section id="shop">
+  <h2 class="title">Shop Slime</h2>
+  <p class="subtitle">
+    Pick your favorite scent. More flavors coming soon.
+  </p>
 
-    <div class="grid">
-      <div class="card">
-        <img src="jasmin.png">
-        <h3>Jasmine</h3>
-        <p>Soft purple slime with a calming jasmine scent.</p>
-        <div class="price">$7.99</div>
-        <a class="btn" href="#">Buy Now</a>
-      </div>
+  <div class="grid">
 
-      <div class="card">
-        <img src="cherryblossom.png">
-        <h3>Cherry Blossom</h3>
-        <p>Pink cherry blossom scented slime with a soft stretch.</p>
-        <div class="price">$7.99</div>
-        <a class="btn" href="#">Buy Now</a>
-      </div>
+    <div class="card">
+      <img src="jasmin.png" alt="Jasmine Slime">
+      <span class="badge">Mystery Charm Included</span>
+      <h3>Jasmine</h3>
+      <p>Soft purple slime with a calm jasmine scent and smooth glossy stretch.</p>
+      <div class="price">$7.99</div>
+      <a class="btn" href="#">Buy Now</a>
     </div>
-  </section>
 
-  <section>
-    <h2>Slime Gallery</h2>
-
-    <div class="grid">
-      <div class="card"><img src="gallery1.png"></div>
-      <div class="card"><img src="gallery2.png"></div>
-      <div class="card"><img src="gallery3.png"></div>
+    <div class="card">
+      <img src="cherryblossom.png" alt="Cherry Blossom Slime">
+      <span class="badge">Mystery Charm Included</span>
+      <h3>Cherry Blossom</h3>
+      <p>Pink scented slime with a soft stretch and sweet cherry blossom vibe.</p>
+      <div class="price">$7.99</div>
+      <a class="btn" href="#">Buy Now</a>
     </div>
-  </section>
 
-  <section id="locator">
-    <h2>Store Locator</h2>
+  </div>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>House of Wine and Spirits</h3>
-        <p>San Marcos, California</p>
-        <a class="btn" href="https://www.google.com/maps/search/House+of+Wine+and+Spirits+San+Marcos+CA" target="_blank">Open Map</a>
+<section>
+  <h2 class="title">Slime Gallery</h2>
+  <p class="subtitle">
+    A look at our slime, charms, packaging, and store displays.
+  </p>
+
+  <div class="grid gallery">
+    <img src="gallery1.png" alt="Slime Gallery Photo">
+    <img src="gallery2.png" alt="Slime Gallery Photo">
+    <img src="gallery3.png" alt="Slime Gallery Photo">
+  </div>
+</section>
+
+<section id="locator">
+  <h2 class="title">Store Locator</h2>
+  <p class="subtitle">
+    Find Slime Cellar near you. More stores are being added soon.
+  </p>
+
+  <div class="locator-box">
+
+    <div class="search-bar">
+      <input type="text" id="storeSearch" placeholder="Search by city, store name, or ZIP code">
+      <button class="btn" onclick="searchStores()">Search</button>
+    </div>
+
+    <div class="store-list" id="storeList">
+
+      <div class="store" data-search="san marcos house of wine spirits 92078">
+        <div>
+          <h3>House of Wine and Spirits</h3>
+          <p>San Marcos, CA</p>
+          <p>Slime Cellar available in store.</p>
+        </div>
+        <a class="btn map-btn" target="_blank" href="https://www.google.com/maps/search/House+of+Wine+and+Spirits+San+Marcos+CA">Directions</a>
       </div>
 
-      <div class="card">
-        <h3>Old Poway Market</h3>
-        <p>Poway, California</p>
-        <a class="btn" href="https://www.google.com/maps/search/Old+Poway+Market+Poway+CA" target="_blank">Open Map</a>
+      <div class="store" data-search="poway old poway market 92064">
+        <div>
+          <h3>Old Poway Market</h3>
+          <p>Poway, CA</p>
+          <p>Slime Cellar available in store.</p>
+        </div>
+        <a class="btn map-btn" target="_blank" href="https://www.google.com/maps/search/Old+Poway+Market+Poway+CA">Directions</a>
       </div>
-    </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Slime Cellar</p>
-    <p>Not edible. Keep away from small children.</p>
-  </footer>
+      <!-- COPY THIS BLOCK TO ADD MORE STORES
+
+      <div class="store" data-search="city store name zip">
+        <div>
+          <h3>Store Name</h3>
+          <p>City, State</p>
+          <p>Slime Cellar available in store.</p>
+        </div>
+        <a class="btn map-btn" target="_blank" href="GOOGLE MAPS LINK HERE">Directions</a>
+      </div>
+
+      -->
+
+    </div>
+
+  </div>
+</section>
+
+<section class="feature">
+  <h2>Want Slime Cellar In Your Store?</h2>
+  <p>
+    Contact us for wholesale orders, local delivery, and new store partnerships.
+  </p>
+
+  <div>
+    <a class="btn light" href="tel:6197154575">Call 619-715-4575</a>
+    <a class="btn light" href="https://instagram.com/" target="_blank">Instagram</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Slime Cellar. All rights reserved.</p>
+  <p>Not edible. Keep away from small children.</p>
+</footer>
+
+<script>
+function searchStores(){
+  const input = document.getElementById("storeSearch").value.toLowerCase().trim();
+  const stores = document.querySelectorAll(".store");
+
+  stores.forEach(store => {
+    const keywords = store.getAttribute("data-search").toLowerCase();
+    const text = store.innerText.toLowerCase();
+
+    if(input === "" || keywords.includes(input) || text.includes(input)){
+      store.style.display = "flex";
+    }else{
+      store.style.display = "none";
+    }
+  });
+}
+
+document.getElementById("storeSearch").addEventListener("keyup", searchStores);
+</script>
 
 </body>
 </html>
