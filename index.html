@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Slime Cellar</title>
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff7ff;color:#25142d}
+.hero{
+  min-height:90vh;
+  background:
+    radial-gradient(circle at 20% 20%,#ffb8ef 0,transparent 28%),
+    radial-gradient(circle at 80% 15%,#a6fff4 0,transparent 26%),
+    radial-gradient(circle at 50% 90%,#d5ff9f 0,transparent 30%),
+    linear-gradient(135deg,#fff1fb,#e8fcff);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px
+}
+.logo{
+  width:160px;height:160px;border-radius:50%;object-fit:contain;background:white;
+  padding:12px;box-shadow:0 15px 40px rgba(0,0,0,.18)
+}
+h1{font-size:60px;color:#8b35ff;margin-top:20px}
+.hero p{font-size:22px;margin:15px auto;max-width:700px;color:#4d3857}
+.btn{
+  display:inline-block;margin:10px;padding:15px 25px;border-radius:999px;
+  background:#8b35ff;color:white;text-decoration:none;font-weight:800;
+  box-shadow:0 10px 25px rgba(139,53,255,.3)
+}
+.btn.alt{background:white;color:#8b35ff}
+section{max-width:1200px;margin:auto;padding:60px 20px}
+.title{text-align:center;font-size:38px;color:#8b35ff;margin-bottom:12px}
+.text{text-align:center;max-width:760px;margin:0 auto 35px;font-size:18px;color:#5b4663}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
+.card{
+  background:white;border-radius:28px;padding:22px;text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);transition:.25s
+}
+.card:hover{transform:translateY(-7px)}
+.card img{
+  width:100%;height:230px;object-fit:cover;border-radius:22px;margin-bottom:15px;
+  background:#f4dcff
+}
+.card h3{font-size:24px;margin-bottom:8px}
+.price{font-size:26px;font-weight:900;color:#8b35ff;margin:12px}
+.badge{
+  display:inline-block;background:#ffe66d;padding:7px 13px;border-radius:999px;
+  font-weight:800;font-size:13px;margin-bottom:10px
+}
+.gallery img{
+  width:100%;height:260px;object-fit:cover;border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12)
+}
+.feature{
+  background:linear-gradient(135deg,#8b35ff,#ff4fc3);
+  color:white;border-radius:35px;text-align:center;padding:45px 25px;
+  box-shadow:0 15px 40px rgba(139,53,255,.3)
+}
+.feature h2{font-size:38px;margin-bottom:12px}
+.location{
+  background:white;border-radius:26px;padding:26px;box-shadow:0 12px 30px rgba(0,0,0,.1)
+}
+.location h3{color:#8b35ff;font-size:24px;margin-bottom:10px}
+.location p{margin:8px 0;line-height:1.5}
+.map{background:#22c99b}
+footer{text-align:center;background:white;padding:35px 20px;color:#5b4663}
+.warning{font-size:14px;margin-top:8px}
+@media(max-width:650px){
+  h1{font-size:42px}
+  .hero p{font-size:18px}
+  .title{font-size:31px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div>
+    <!-- Put your logo file name here -->
+    <img class="logo" src="logo.png" alt="Slime Cellar Logo">
+    <h1>Slime Cellar</h1>
+    <p>Handmade scented slime with mystery charms inside. Stretch it, squish it, collect it.</p>
+    <a href="#shop" class="btn">Shop Slime</a>
+    <a href="#locator" class="btn alt">Find Us In Stores</a>
+  </div>
+</div>
+
+<section class="feature">
+  <h2>Every Container Has 1 Mystery Charm</h2>
+  <p>Open your slime and discover which charm you got. Try to collect them all!</p>
+</section>
+
+<section id="shop">
+  <h2 class="title">Shop Slime</h2>
+  <p class="text">Replace the image names and button links with your real product photos and checkout links.</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="slime1.jpg" alt="Slime">
+      <span class="badge">Mystery Charm Included</span>
+      <h3>Strawberry Slime</h3>
+      <p>Sweet strawberry scented slime.</p>
+      <div class="price">$7.99</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <img src="slime2.jpg" alt="Slime">
+      <span class="badge">Mystery Charm Included</span>
+      <h3>Jasmine Purple</h3>
+      <p>Soft purple slime with a jasmine scent.</p>
+      <div class="price">$7.99</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <img src="slime3.jpg" alt="Slime">
+      <span class="badge">Mystery Charm Included</span>
+      <h3>Watermelon Slime</h3>
+      <p>Fresh watermelon scented slime.</p>
+      <div class="price">$7.99</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <img src="slime4.jpg" alt="Slime">
+      <span class="badge">Limited Batch</span>
+      <h3>Mystery Slime</h3>
+      <p>Surprise scent, surprise color, surprise charm.</p>
+      <div class="price">$7.99</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="title">Slime Gallery</h2>
+  <p class="text">Add as many pictures as you want. Just upload images to GitHub and change the file names.</p>
+
+  <div class="grid gallery">
+    <img src="gallery1.jpg" alt="Slime photo">
+    <img src="gallery2.jpg" alt="Slime photo">
+    <img src="gallery3.jpg" alt="Slime photo">
+    <img src="gallery4.jpg" alt="Slime photo">
+    <img src="gallery5.jpg" alt="Slime photo">
+    <img src="gallery6.jpg" alt="Slime photo">
+  </div>
+</section>
+
+<section id="locator">
+  <h2 class="title">Store Locator</h2>
+  <p class="text">Find Slime Cellar at these locations.</p>
+
+  <div class="grid">
+
+    <div class="location">
+      <h3>House of Wine and Spirits</h3>
+      <p><strong>City:</strong> San Marcos, CA</p>
+      <p><strong>Products:</strong> Slime Cellar containers</p>
+      <a class="btn map" target="_blank" href="https://www.google.com/maps/search/House+of+Wine+and+Spirits+San+Marcos+CA">Open Map</a>
+    </div>
+
+    <div class="location">
+      <h3>Old Poway Market</h3>
+      <p><strong>City:</strong> Poway, CA</p>
+      <p><strong>Products:</strong> Slime Cellar containers</p>
+      <a class="btn map" target="_blank" href="https://www.google.com/maps/search/Old+Poway+Market+Poway+CA">Open Map</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="feature">
+  <h2>Want Slime Cellar In Your Store?</h2>
+  <p>Contact us for wholesale orders, local delivery, and custom batches.</p>
+  <a href="tel:6197154575" class="btn alt">Call 619-715-4575</a>
+  <a href="https://instagram.com/" class="btn alt" target="_blank">Instagram</a>
+</section>
+
+<footer>
+  <p>© 2026 Slime Cellar. All rights reserved.</p>
+  <p class="warning">Warning: Not edible. Keep away from small children. Adult supervision recommended.</p>
+</footer>
+
+</body>
+</html>
