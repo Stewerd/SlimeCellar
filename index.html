@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Slime Cellar</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,sans-serif;
+  font-family:'Fredoka',sans-serif;
 }
 
 html{
@@ -20,269 +21,269 @@ html{
 
 body{
   background:#fff8fd;
-  color:#24142d;
+  color:#25142f;
   overflow-x:hidden;
 }
 
-/* FLOATING BLOBS */
-
-.blob{
+body::before{
+  content:"";
   position:fixed;
-  border-radius:50%;
-  filter:blur(90px);
-  z-index:-1;
-  opacity:.45;
+  inset:0;
+  background:
+    radial-gradient(circle at 10% 15%,rgba(255,128,215,.35),transparent 28%),
+    radial-gradient(circle at 90% 25%,rgba(151,110,255,.28),transparent 30%),
+    radial-gradient(circle at 20% 85%,rgba(133,255,237,.32),transparent 30%);
+  z-index:-2;
 }
-
-.blob1{
-  width:400px;
-  height:400px;
-  background:#ff8ad8;
-  top:-100px;
-  left:-120px;
-}
-
-.blob2{
-  width:420px;
-  height:420px;
-  background:#9f8cff;
-  top:300px;
-  right:-120px;
-}
-
-.blob3{
-  width:350px;
-  height:350px;
-  background:#8fffe8;
-  bottom:-100px;
-  left:20%;
-}
-
-/* NAVBAR */
 
 header{
   position:sticky;
   top:0;
   z-index:100;
+  height:76px;
+  padding:0 6%;
+  background:rgba(255,255,255,.82);
   backdrop-filter:blur(18px);
-  background:rgba(255,255,255,.72);
-  border-bottom:1px solid rgba(255,255,255,.5);
-
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:center;
-
-  padding:18px 6%;
+  border-bottom:1px solid rgba(141,57,255,.08);
 }
 
-.logo-area{
+.brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
+  color:#8d39ff;
+  font-size:26px;
+  font-weight:700;
 }
 
-.logo-area img{
+.brand img{
   width:52px;
   height:52px;
   border-radius:50%;
   object-fit:cover;
 }
 
-.logo-area h2{
-  color:#8d39ff;
-  font-size:24px;
-}
-
 nav a{
-  margin-left:20px;
+  color:#3f2c49;
   text-decoration:none;
-  color:#533f5d;
-  font-weight:700;
-  transition:.2s;
+  margin-left:24px;
+  font-weight:600;
 }
-
-nav a:hover{
-  color:#8d39ff;
-}
-
-/* HERO */
 
 .hero{
-  min-height:95vh;
-
+  min-height:calc(100vh - 76px);
+  padding:70px 6%;
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items:center;
-
-  gap:60px;
-
-  padding:70px 6%;
+  gap:55px;
 }
 
-.tag{
+.pill{
   display:inline-block;
-
   background:white;
-
   color:#8d39ff;
-
-  padding:10px 18px;
-
+  padding:11px 18px;
   border-radius:999px;
-
-  font-weight:900;
-
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-  margin-bottom:24px;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  margin-bottom:22px;
 }
 
 .hero h1{
-  font-size:86px;
-  line-height:.92;
+  font-size:82px;
+  line-height:.93;
   color:#8d39ff;
-  margin-bottom:22px;
+  margin-bottom:24px;
 }
 
 .hero p{
   font-size:22px;
-  line-height:1.7;
-  color:#5b4866;
-  max-width:640px;
-}
-
-.buttons{
-  margin-top:32px;
+  line-height:1.6;
+  color:#604d69;
+  max-width:620px;
 }
 
 .btn{
   display:inline-block;
-
-  padding:16px 30px;
-
-  border-radius:999px;
-
+  border:none;
+  cursor:pointer;
   text-decoration:none;
-
-  font-weight:900;
-
-  margin-right:12px;
-
+  padding:16px 30px;
+  border-radius:999px;
+  font-weight:700;
+  margin:12px 8px 0 0;
   transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
 }
 
 .btn.primary{
   background:#8d39ff;
   color:white;
-  box-shadow:0 12px 28px rgba(141,57,255,.25);
+  box-shadow:0 12px 25px rgba(141,57,255,.28);
 }
 
-.btn.secondary{
+.btn.white{
   background:white;
   color:#8d39ff;
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
+  box-shadow:0 12px 25px rgba(0,0,0,.08);
 }
 
-.btn:hover{
-  transform:translateY(-4px) scale(1.03);
-}
-
-/* HERO IMAGE */
-
-.hero-image{
+.hero-art{
   position:relative;
 }
 
-.hero-card{
+.product-frame{
   background:white;
-
-  border-radius:42px;
-
+  border-radius:44px;
   padding:22px;
-
-  box-shadow:0 25px 50px rgba(0,0,0,.12);
-
-  transform:rotate(3deg);
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+  transform:rotate(2deg);
 }
 
-.hero-card img{
+.product-frame img{
   width:100%;
-  height:560px;
+  max-height:520px;
   object-fit:cover;
-  border-radius:30px;
+  border-radius:32px;
+  display:block;
 }
 
-.floating-badge{
+.float{
   position:absolute;
-
   background:white;
-
-  border-radius:999px;
-
+  color:#8d39ff;
   padding:14px 18px;
-
-  font-weight:900;
-
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  border-radius:999px;
+  font-weight:700;
+  box-shadow:0 14px 30px rgba(0,0,0,.12);
 }
 
-.badge1{
-  top:-20px;
+.float.one{
+  top:-18px;
   left:-20px;
 }
 
-.badge2{
-  bottom:20px;
-  right:-20px;
+.float.two{
+  right:-18px;
+  bottom:28px;
 }
 
-/* SECTIONS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding:20px 6% 65px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.stat{
+  background:white;
+  border-radius:28px;
+  padding:24px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.07);
+}
+
+.stat h3{
+  color:#8d39ff;
+  font-size:34px;
+}
+
+.stat p{
+  color:#6b5874;
+  margin-top:5px;
+}
 
 section{
-  max-width:1350px;
+  max-width:1300px;
   margin:auto;
-  padding:80px 6%;
+  padding:75px 6%;
 }
 
 .title{
   text-align:center;
-  font-size:52px;
   color:#8d39ff;
-  margin-bottom:16px;
+  font-size:52px;
+  margin-bottom:14px;
 }
 
 .subtitle{
   text-align:center;
-  max-width:760px;
-  margin:0 auto 45px;
-
-  color:#5f4c68;
-
+  color:#66526f;
   font-size:19px;
-  line-height:1.7;
+  max-width:760px;
+  margin:0 auto 42px;
+  line-height:1.6;
 }
 
-/* PRODUCT GRID */
+.charm{
+  background:linear-gradient(135deg,#8d39ff,#ff4fc7);
+  color:white;
+  border-radius:48px;
+  padding:65px 35px;
+  text-align:center;
+  box-shadow:0 22px 50px rgba(141,57,255,.24);
+}
+
+.charm h2{
+  font-size:52px;
+  margin-bottom:12px;
+}
+
+.charm p{
+  font-size:22px;
+  line-height:1.6;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
+
+.feature{
+  background:white;
+  border-radius:30px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.07);
+}
+
+.feature .emoji{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.feature h3{
+  color:#8d39ff;
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.feature p{
+  color:#66526f;
+  line-height:1.5;
+}
 
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
   gap:34px;
 }
 
 .product{
-  background:rgba(255,255,255,.75);
-
-  backdrop-filter:blur(18px);
-
-  border:1px solid rgba(255,255,255,.4);
-
-  border-radius:38px;
-
+  background:white;
+  border-radius:40px;
   overflow:hidden;
-
-  box-shadow:0 18px 40px rgba(0,0,0,.08);
-
+  box-shadow:0 18px 45px rgba(0,0,0,.09);
   transition:.25s;
 }
 
@@ -292,149 +293,104 @@ section{
 
 .product img{
   width:100%;
-  height:420px;
-  object-fit:cover;
+  height:360px;
+  object-fit:contain;
+  background:#fff7fd;
+  padding:18px;
 }
 
 .product-content{
   padding:28px;
 }
 
-.mini-badge{
+.badge{
   display:inline-block;
-
-  background:#ffe86d;
-
-  color:#463900;
-
+  background:#ffe96b;
+  color:#4b3b00;
   padding:8px 14px;
-
   border-radius:999px;
-
-  font-size:13px;
-
-  font-weight:900;
-
-  margin-bottom:16px;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:14px;
 }
 
 .product h3{
-  font-size:38px;
-  margin-bottom:10px;
+  font-size:36px;
+  margin-bottom:8px;
 }
 
 .product p{
-  color:#5c4a66;
-  line-height:1.6;
+  color:#66526f;
+  line-height:1.5;
 }
 
 .price{
-  margin:22px 0;
-  font-size:36px;
-  font-weight:900;
   color:#8d39ff;
+  font-size:36px;
+  font-weight:700;
+  margin:20px 0;
 }
 
-/* CHARM SECTION */
-
-.charm{
-  background:linear-gradient(135deg,#8d39ff,#ff4fc9);
-
-  border-radius:50px;
-
-  padding:70px 30px;
-
-  text-align:center;
-
-  color:white;
-
-  box-shadow:0 20px 45px rgba(141,57,255,.22);
-}
-
-.charm h2{
-  font-size:56px;
-  margin-bottom:16px;
-}
-
-.charm p{
-  font-size:22px;
-  line-height:1.7;
-}
-
-/* GALLERY */
-
-.gallery-scroll{
-  display:flex;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:24px;
-  overflow-x:auto;
-  padding-bottom:10px;
 }
 
-.gallery-scroll img{
-  width:360px;
-  height:420px;
+.gallery-card{
+  background:white;
+  padding:14px;
+  border-radius:34px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.gallery-card img{
+  width:100%;
+  height:310px;
   object-fit:cover;
-
-  border-radius:36px;
-
-  flex-shrink:0;
-
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
-
-  transition:.25s;
+  border-radius:24px;
+  display:block;
 }
 
-.gallery-scroll img:hover{
-  transform:scale(1.03);
+.gallery-card p{
+  padding:14px 6px 4px;
+  color:#5f4b68;
+  font-weight:600;
 }
-
-/* STORE LOCATOR */
 
 .locator{
   background:white;
-
-  border-radius:42px;
-
-  padding:32px;
-
-  box-shadow:0 18px 40px rgba(0,0,0,.08);
+  border-radius:44px;
+  padding:34px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
 }
 
 .search{
   display:flex;
-  gap:12px;
+  gap:14px;
   flex-wrap:wrap;
-  margin-bottom:28px;
+  margin-bottom:26px;
 }
 
 .search input{
   flex:1;
   min-width:240px;
-
-  padding:18px 20px;
-
+  padding:17px 20px;
   border-radius:999px;
-
   border:2px solid #eadcff;
-
-  font-size:16px;
+  font-size:17px;
+  outline:none;
 }
 
 .store{
-  border:2px solid #f1e8ff;
-
-  border-radius:26px;
-
+  border:2px solid #f0e5ff;
+  border-radius:28px;
   padding:24px;
-
+  margin-top:18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-
-  margin-top:18px;
-
   gap:20px;
-
   flex-wrap:wrap;
 }
 
@@ -445,47 +401,36 @@ section{
 }
 
 .store p{
-  color:#5c4a66;
+  color:#66526f;
   line-height:1.5;
 }
 
-/* WHOLESALE */
-
 .wholesale{
-  background:#251331;
-
-  border-radius:50px;
-
+  background:#25142f;
   color:white;
-
+  border-radius:48px;
+  padding:65px 30px;
   text-align:center;
-
-  padding:70px 25px;
 }
 
 .wholesale h2{
-  font-size:52px;
-  margin-bottom:16px;
+  font-size:48px;
+  margin-bottom:12px;
 }
 
 .wholesale p{
   font-size:20px;
-  line-height:1.7;
-  margin-bottom:24px;
+  color:#e8dff0;
+  margin-bottom:20px;
 }
-
-/* FOOTER */
 
 footer{
   text-align:center;
   padding:40px 20px;
-  color:#6a5774;
+  color:#6c5875;
 }
 
-/* MOBILE */
-
-@media(max-width:950px){
-
+@media(max-width:900px){
   nav{
     display:none;
   }
@@ -493,6 +438,7 @@ footer{
   .hero{
     grid-template-columns:1fr;
     text-align:center;
+    padding-top:50px;
   }
 
   .hero h1{
@@ -501,19 +447,19 @@ footer{
 
   .hero p{
     margin:auto;
-    font-size:18px;
+    font-size:19px;
   }
 
-  .hero-card{
+  .product-frame{
     transform:none;
   }
 
-  .hero-card img{
-    height:400px;
+  .float{
+    display:none;
   }
 
-  .floating-badge{
-    display:none;
+  .stats{
+    grid-template-columns:1fr;
   }
 
   .title{
@@ -522,30 +468,23 @@ footer{
 
   .charm h2,
   .wholesale h2{
-    font-size:40px;
+    font-size:38px;
   }
 
   .store{
-    justify-content:center;
     text-align:center;
+    justify-content:center;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-
 <header>
-
-  <div class="logo-area">
-    <img src="logo.png" alt="Logo">
-    <h2>Slime Cellar</h2>
+  <div class="brand">
+    <img src="logo.png" alt="Slime Cellar Logo">
+    <span>Slime Cellar</span>
   </div>
 
   <nav>
@@ -554,321 +493,219 @@ footer{
     <a href="#locator">Stores</a>
     <a href="#wholesale">Wholesale</a>
   </nav>
-
 </header>
 
-<!-- HERO -->
-
 <div class="hero">
-
   <div>
+    <span class="pill">✨ Mystery charm inside every slime</span>
 
-    <span class="tag">
-      ✨ Mystery charm inside every slime
-    </span>
-
-    <h1>
-      Stretch it.<br>
-      Squish it.<br>
-      Collect it.
-    </h1>
+    <h1>Stretch it.<br>Squish it.<br>Collect it.</h1>
 
     <p>
-      Handmade scented slime with soft textures, collectible charms,
-      and premium pastel packaging.
+      Handmade scented slime with soft textures, cute packaging,
+      and a surprise collectible charm inside every container.
     </p>
 
-    <div class="buttons">
-      <a href="#shop" class="btn primary">Shop Slime</a>
-      <a href="#locator" class="btn secondary">Find Near You</a>
-    </div>
-
+    <a href="#shop" class="btn primary">Shop Slime</a>
+    <a href="#locator" class="btn white">Find Near You</a>
   </div>
 
-  <div class="hero-image">
+  <div class="hero-art">
+    <div class="float one">🌸 Cherry Blossom</div>
+    <div class="float two">⭐ New Drop</div>
 
-    <div class="floating-badge badge1">
-      🌸 Cherry Blossom
+    <div class="product-frame">
+      <img src="cherryblossom.png" alt="Cherry Blossom Slime">
     </div>
-
-    <div class="floating-badge badge2">
-      ⭐ Best Seller
-    </div>
-
-    <div class="hero-card">
-      <img src="cherryblossom.png" alt="Slime">
-    </div>
-
   </div>
-
 </div>
 
-<!-- CHARM -->
-
-<section>
-
-  <div class="charm">
-
-    <h2>Collect The Mystery Charms</h2>
-
-    <p>
-      Every Slime Cellar container comes with 1 surprise charm inside.
-      Open them, collect them, and trade with friends.
-    </p>
-
+<div class="stats">
+  <div class="stat">
+    <h3>2</h3>
+    <p>Flavors Available</p>
   </div>
 
+  <div class="stat">
+    <h3>1</h3>
+    <p>Mystery Charm Inside</p>
+  </div>
+
+  <div class="stat">
+    <h3>100%</h3>
+    <p>Collectible Fun</p>
+  </div>
+</div>
+
+<section>
+  <div class="charm">
+    <h2>Collect The Mystery Charms</h2>
+    <p>
+      Each Slime Cellar container includes one surprise charm.
+      Open it, collect it, and try to find them all.
+    </p>
+  </div>
 </section>
 
-<!-- PRODUCTS -->
+<section>
+  <h2 class="title">Why Everyone Loves It</h2>
+  <p class="subtitle">
+    Cute scents, soft texture, and a surprise collectible charm in every container.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <div class="emoji">🌸</div>
+      <h3>Scented Slime</h3>
+      <p>Soft floral scents made for a fun sensory experience.</p>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">✨</div>
+      <h3>Mystery Charm</h3>
+      <p>Every container has one surprise charm hidden inside.</p>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">💖</div>
+      <h3>Cute Packaging</h3>
+      <p>Bright collectible labels that stand out on any shelf.</p>
+    </div>
+
+    <div class="feature">
+      <div class="emoji">🎁</div>
+      <h3>Perfect Gift</h3>
+      <p>A fun little surprise item for kids, parties, and collectors.</p>
+    </div>
+  </div>
+</section>
 
 <section id="shop">
-
   <h2 class="title">Shop Our Slime</h2>
-
   <p class="subtitle">
-    Soft scented slime with collectible surprises inside every jar.
+    Two signature slime scents available now. More flavors coming soon.
   </p>
 
   <div class="products">
-
     <div class="product">
-
       <img src="jasmin.png" alt="Jasmine Slime">
 
       <div class="product-content">
-
-        <span class="mini-badge">
-          Mystery Charm Included
-        </span>
-
+        <span class="badge">Mystery Charm Included</span>
         <h3>Jasmine</h3>
-
-        <p>
-          Purple glossy slime with a soft calming jasmine scent.
-        </p>
-
-        <div class="price">
-          $7.99
-        </div>
-
-        <a href="#" class="btn primary">
-          Buy Now
-        </a>
-
+        <p>Purple glossy slime with a soft calming jasmine scent.</p>
+        <div class="price">$7.99</div>
+        <a href="#" class="btn primary">Buy Now</a>
       </div>
-
     </div>
 
     <div class="product">
-
       <img src="cherryblossom.png" alt="Cherry Blossom Slime">
 
       <div class="product-content">
-
-        <span class="mini-badge">
-          Best Seller
-        </span>
-
+        <span class="badge">Best Seller</span>
         <h3>Cherry Blossom</h3>
-
-        <p>
-          Smooth pink slime with a sweet cherry blossom scent.
-        </p>
-
-        <div class="price">
-          $7.99
-        </div>
-
-        <a href="#" class="btn primary">
-          Buy Now
-        </a>
-
+        <p>Smooth pink slime with a sweet cherry blossom scent.</p>
+        <div class="price">$7.99</div>
+        <a href="#" class="btn primary">Buy Now</a>
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-<!-- GALLERY -->
 
 <section id="gallery">
-
   <h2 class="title">Slime Gallery</h2>
-
   <p class="subtitle">
-    Photos of our slime, packaging, charms, and store displays.
+    Product photos, charm promos, store displays, and slime close-ups.
   </p>
 
-  <div class="gallery-scroll">
+  <div class="gallery">
+    <div class="gallery-card">
+      <img src="gallery1.png" alt="Slime Gallery">
+      <p>Fresh slime batch</p>
+    </div>
 
-    <img src="gallery1.png" alt="">
-    <img src="gallery2.png" alt="">
-    <img src="gallery3.png" alt="">
+    <div class="gallery-card">
+      <img src="gallery2.png" alt="Slime Gallery">
+      <p>Now in stores</p>
+    </div>
 
+    <div class="gallery-card">
+      <img src="gallery3.png" alt="Slime Gallery">
+      <p>Collect all the charms</p>
+    </div>
   </div>
-
 </section>
 
-<!-- STORE LOCATOR -->
-
 <section id="locator">
-
   <h2 class="title">Store Locator</h2>
-
   <p class="subtitle">
     Search for stores carrying Slime Cellar near you.
   </p>
 
   <div class="locator">
-
     <div class="search">
-
-      <input
-        id="storeSearch"
-        type="text"
-        placeholder="Search city, ZIP code, or store name"
-      >
-
-      <a class="btn primary" onclick="searchStores()">
-        Search
-      </a>
-
+      <input id="storeSearch" type="text" placeholder="Search city, ZIP code, or store name">
+      <button class="btn primary" onclick="searchStores()">Search</button>
     </div>
 
     <div id="storeList">
-
-      <div
-        class="store"
-        data-search="san marcos house of wine spirits"
-      >
-
+      <div class="store" data-search="san marcos house of wine spirits 92078">
         <div>
-
           <h3>House of Wine and Spirits</h3>
-
           <p>San Marcos, California</p>
-
           <p>Slime Cellar available in store.</p>
-
         </div>
 
-        <a
-          class="btn primary"
-          target="_blank"
-          href="https://www.google.com/maps/search/House+of+Wine+and+Spirits+San+Marcos+CA"
-        >
-          Directions
-        </a>
-
+        <a class="btn primary" target="_blank" href="https://www.google.com/maps/search/House+of+Wine+and+Spirits+San+Marcos+CA">Directions</a>
       </div>
 
-      <div
-        class="store"
-        data-search="poway old poway market"
-      >
-
+      <div class="store" data-search="poway old poway market 92064">
         <div>
-
           <h3>Old Poway Market</h3>
-
           <p>Poway, California</p>
-
           <p>Slime Cellar available in store.</p>
-
         </div>
 
-        <a
-          class="btn primary"
-          target="_blank"
-          href="https://www.google.com/maps/search/Old+Poway+Market+Poway+CA"
-        >
-          Directions
-        </a>
-
+        <a class="btn primary" target="_blank" href="https://www.google.com/maps/search/Old+Poway+Market+Poway+CA">Directions</a>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-<!-- WHOLESALE -->
-
 <section id="wholesale">
-
   <div class="wholesale">
+    <h2>Want Slime Cellar In Your Store?</h2>
+    <p>Contact us for wholesale pricing, local delivery, and store partnerships.</p>
 
-    <h2>
-      Want Slime Cellar In Your Store?
-    </h2>
-
-    <p>
-      Contact us for wholesale pricing,
-      local delivery, and new store partnerships.
-    </p>
-
-    <a href="tel:6197154575" class="btn secondary">
-      Call Us
-    </a>
-
-    <a href="#" class="btn secondary">
-      Instagram
-    </a>
-
+    <a href="tel:6197154575" class="btn white">Call 619-715-4575</a>
+    <a href="#" class="btn white">Instagram</a>
   </div>
-
 </section>
 
 <footer>
-
-  <p>
-    © 2026 Slime Cellar. All rights reserved.
-  </p>
-
-  <p>
-    Not edible. Keep away from small children.
-  </p>
-
+  <p>© 2026 Slime Cellar. All rights reserved.</p>
+  <p>Not edible. Keep away from small children.</p>
 </footer>
 
 <script>
-
 function searchStores(){
-
-  const input =
-    document
-    .getElementById("storeSearch")
-    .value
-    .toLowerCase();
-
-  const stores =
-    document.querySelectorAll(".store");
+  const input = document.getElementById("storeSearch").value.toLowerCase().trim();
+  const stores = document.querySelectorAll(".store");
 
   stores.forEach(store => {
+    const keywords = store.getAttribute("data-search").toLowerCase();
+    const text = store.innerText.toLowerCase();
 
-    const keywords =
-      store
-      .getAttribute("data-search")
-      .toLowerCase();
-
-    if(
-      input === "" ||
-      keywords.includes(input)
-    ){
+    if(input === "" || keywords.includes(input) || text.includes(input)){
       store.style.display = "flex";
-    }
-    else{
+    }else{
       store.style.display = "none";
     }
-
   });
-
 }
 
+document.getElementById("storeSearch").addEventListener("keyup", searchStores);
 </script>
 
 </body>
